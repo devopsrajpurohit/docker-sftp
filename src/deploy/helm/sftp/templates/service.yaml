@@ -34,7 +34,7 @@ spec:
       targetPort: ssh
       protocol: TCP
       name: ssh
-    - port: 21
+    - port:  {{ .Values.service.ftp_port }}
       targetPort: ftp
       protocol: TCP
       name: ftp
