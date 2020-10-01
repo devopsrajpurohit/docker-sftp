@@ -44,6 +44,9 @@ spec:
             - name: ssh
               containerPort: 22
               protocol: TCP
+            - name: ftp 
+              containerPort: 21
+              protocol: TCP
           {{- if or .Values.configuration .Values.storage.volumeMounts }}
           volumeMounts:
           {{- if .Values.configuration }}
