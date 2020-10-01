@@ -35,6 +35,11 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
           {{- end }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:          
+          {{- range .Values.env }}
+           - name: {{ .name }}
+             value: {{ .value }}
+          {{- end }}
           ports:
             - name: ssh
               containerPort: 22
