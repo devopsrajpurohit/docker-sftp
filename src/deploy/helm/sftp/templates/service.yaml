@@ -34,5 +34,9 @@ spec:
       targetPort: ssh
       protocol: TCP
       name: ssh
+    - port: 21
+      targetPort: ftp
+      protocol: TCP
+      name: ftp
   selector:
     {{- include "sftp.selectorLabels" . | nindent 4 }}
